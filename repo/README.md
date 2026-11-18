@@ -6,6 +6,17 @@ A bilingual (Greek / English) guided quiz that takes an HR manager or CFO from �
 
 **Live:** https://giorgoskosyfas.github.io/up-benefits-builder/ (EL) · https://giorgoskosyfas.github.io/up-benefits-builder/en/ (EN)
 
+## Deliverables
+
+* **Write-up (1 page):** `docs/writeup.pdf` · **Technical appendix** (events table, funnel, routing, SEO / AI search, PageSpeed): `docs/appendix.pdf`
+* **Loom script:** `docs/loom-script.pdf`
+* **Screenshots:** `docs/screenshots/`: n8n workflows, Google Sheet with routed leads, GA4 Realtime, GTM tags, mobile and desktop UI
+* **Workflow exports (no credentials):** `n8n/*.workflow.json` · **GTM container export:** `gtm/GTM-UBB-container-import.json`
+
+## Why Webflow + custom code
+
+uphellas.gr is built on Webflow, so the app ships as a framework-free component that drops into any Webflow page with one Code Embed (`webflow/embed.html`). The free Webflow Starter plan locks Code Embed and custom head code, so the live demo is hosted as a static site on GitHub Pages. That also gives full control over hreflang, canonical tags, structured data and Core Web Vitals. On a paid Site plan, the same embed goes into a CMS-driven Webflow page.
+
 ## What’s in the repo
 
 | Path | What it is |

@@ -17,7 +17,7 @@
     summaryEndpoint: '',
     leadEndpoint: '',
     demoUrl: { el: 'https://uphellas.gr/epikoinonia', en: 'https://uphellas.gr/en/contact' },
-    timeoutMs: 9000
+    timeoutMs: 15000
   }, window.UBB_CONFIG || {});
 
   /* =====================================================================

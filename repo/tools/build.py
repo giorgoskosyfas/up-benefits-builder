@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Builds the bilingual landing pages (EL + EN) from one source so copy, SEO tags and schema stay in sync.
 
-Usage: python3 build.py --base https://example.github.io/up-benefits-builder \
+Usage (from the repo root): python3 tools/build.py --base https://example.github.io/up-benefits-builder \
          --gtm GTM-XXXXXXX --summary <n8n summary webhook> --lead <n8n lead webhook>
 """
 import argparse, json, html, os
@@ -146,6 +146,8 @@ footer.site nav{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:10px}
 """
 
 
+APP_CSS = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'assets', 'ubb.css')).read().split('\n',1)[1].replace('\n','')
+
 def page(lang):
     c = C[lang]
     url = BASE + c['path']
@@ -223,9 +225,7 @@ def page(lang):
 <meta name="twitter:description" content="{html.escape(c['desc'])}">
 <meta name="twitter:image" content="{og_img}">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23ff8500'/%3E%3Cstop offset='1' stop-color='%239f51ae'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='32' cy='32' r='32' fill='url(%23g)'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='700' font-size='26' text-anchor='middle' fill='white'%3EUp%3C/text%3E%3C/svg%3E">
-<style>{CRITICAL_CSS.strip()}</style>
-<link rel="preload" href="{'../' if lang == 'en' else ''}assets/ubb.js" as="script">
-<link rel="stylesheet" href="{'../' if lang == 'en' else ''}assets/ubb.css">
+<style>{CRITICAL_CSS.strip()}{APP_CSS}</style>
 <script type="application/ld+json">{json.dumps(schema, ensure_ascii=False)}</script>
 <script>window.dataLayer=window.dataLayer||[];window.UBB_CONFIG={cfg};</script>
 {gtm_head}
