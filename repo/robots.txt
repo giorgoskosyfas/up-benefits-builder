@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://giorgoskosyfas.github.io/up-benefits-builder/sitemap.xml
