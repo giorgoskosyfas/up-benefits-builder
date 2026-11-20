@@ -9,7 +9,7 @@ A bilingual (Greek / English) guided quiz that takes an HR manager or CFO from �
 ## Deliverables
 
 * **Write-up (1 page):** `docs/writeup.pdf` · **Technical appendix** (events table, funnel, routing, SEO / AI search, PageSpeed): `docs/appendix.pdf`
-* **Loom script:** `docs/loom-script.pdf`
+* **Video walkthrough (3:20, captioned):** `docs/walkthrough.mp4`
 * **Screenshots:** `docs/screenshots/`: n8n workflows, Google Sheet with routed leads, GA4 Realtime, GTM tags, mobile and desktop UI
 * **Workflow exports (no credentials):** `n8n/*.workflow.json` · **GTM container export:** `gtm/GTM-UBB-container-import.json`
 
@@ -66,4 +66,4 @@ python3 tests/e2e.py              # Playwright: both languages × mobile/desktop
 
 ## AI tools used
 
-Built with Claude (Anthropic) as a coding and copy assistant. Claude researched the public uphellas.gr product pages, drafted the code, workflows, GTM container and bilingual copy, and ran the tests. Account setup was done in my own browser. I reviewed and own every decision documented in the write-up.
+I used Claude as a coding assistant for drafting code, n8n workflows, copy and tests, and for browser automation during setup. I set up and own all the accounts, credentials and integrations, and I reviewed and tested every output.
